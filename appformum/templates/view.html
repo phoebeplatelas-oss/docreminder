@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Photos</title>
+</head>
+<body>
+    <h1>Saved Photos</h1>
+
+    {% for p in photos %}
+        <div style="margin-bottom: 20px;">
+            <img src="{{ url_for('static', filename='uploads/' + p['filename']) }}" width="200"><br>
+            <strong>{{ p['name'] }}</strong> — due {{ p['due_date'] }}
+        </div>
+    {% endfor %}
+
+    <a href="/">Add another</a>
+</body>
+</html>
